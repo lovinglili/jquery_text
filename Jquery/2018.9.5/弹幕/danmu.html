@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.aaa{
+			position:absolute;
+			font-weight:300;
+			word-break: keep-all;
+		}
+	</style>
+</head>
+<script type="text/javascript" src="../../jq/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="../../jq/common.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function(){
+			var vals=$("input").val();
+			var danmu=$("<span>");
+			danmu.text(vals);
+			danmu.addClass("aaa");
+			danmu.css({
+				color:randomColor(),
+				fontSize:randomInt(17,30),
+				left:$(window).innerWidth(),
+				top:randomInt(0,$(window).innerHeight())
+			});
+			danmu.appendTo($(document.body))
+			danmu.animate({left:-300},2000);
+		});
+	})
+</script>
+<body>
+	<input type="text"><button>发送弹幕</button>
+
+</body>
+</html>

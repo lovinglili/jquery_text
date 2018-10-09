@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		/*$("div input:checkbox").click(function(){
+					//判断input是否被选中,is 类似于ES5数组的方法some
+					var isAllChecked=$("div input:checkbox").is(function(index){
+						return !$(this).prop("checked");
+					})
+					if(!isAllChecked){
+						console.log(!isAllChecked)
+						$(".select-all").prop("checked",true);
+					}
+					else{
+						$(".select-all").prop("checked",false);
+					}
+				});
+				$(".select-all").click(function(){
+					$("div input:checkbox").prop("checked",$(this).prop("checked"))
+				});*/
+
+
+
+	</script>
+	<body>
+
+		<input type="checkbox" class="select-all"/>全选
+		<!-- <input type="checkbox" class="select-other"/>反选 -->
+		<div>
+			<input type="checkbox">
+			<input type="checkbox">
+			<input type="checkbox">
+			<input type="checkbox">
+			<input type="checkbox">
+		</div>
+		
+		<script src="../jq/jquery-1.9.0.js"></script>	
+		<script type="text/javascript">
+			
+			$(function(){
+				$("div input:checkbox").click(function(){
+					var isAllChecked=$("div input:checkbox").is(function(index)
+					{
+						return !$(this).prop("checked");
+					})
+					console.log(!isAllChecked);
+					if(!isAllChecked){
+						$(".select-all").prop("checked",true);
+					}
+					else
+					{
+						$(".select-all").prop("checked",false)
+					}
+				})
+				$(".select-all").click(function(){
+					$("div input:checkbox").prop("checked",$(this).prop("checked"))
+				})
+
+				
+			});
+
+		</script>
+	</body>
+</html>

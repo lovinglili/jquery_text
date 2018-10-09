@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	//也叫函数的懒加载
+	function addEvent(ele,eventname,fn,isCapture){
+		if(window.VBArray){//判断IE的
+			ele.attachEvent("on"+eventname.fn);
+			addEvent=function(){
+			ele.attachEvent("on"+eventname.fn);
+
+			}
+		}
+		else
+		{
+			ele.addEventListener(eventname,fn,iscapture);
+			addEvent=function(){
+			ele.addEventListener(eventname,fn,iscapture);
+
+			}
+		}
+	}
+</script>
+<body>
+	
+</body>
+</html>

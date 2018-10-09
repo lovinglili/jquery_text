@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="../jq/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+	//jquery对象可能是一个数组，所有操作都是针对所有符合条件的标签
+	$(function(){
+		$("div button").css("background","green");
+		$("div p button").css("color","red");
+		$("ul").css("list-style","none");
+		$("li:even").css("background","red");//奇数行,even代表的是下标（偶数）
+		$("li:odd").css("background","green");//偶数行
+		$("li:gt(5)").css("background","pink");//大于下标为5的行
+		$("li:lt(3)").css("background","yellow")//小于下标为3的行变色
+	})
+
+
+
+
+	/*window.onload=function(){};//页面加载完成
+	$(document).ready(function(){})//DOM树加载完成
+	类似于$(function(){})*/
+</script>
+<body>
+	<div>
+		<button>111</button>
+		<p>
+			<button>666</button>
+		</p>
+	</div>
+	<button>222</button>
+	<button>333</button>
+
+	<ul>
+		<li>123</li>
+		<li>234</li>
+		<li>345</li>
+		<li>456</li>
+		<li>567</li>
+		<li>678</li>
+		<li>789</li>
+	</ul>
+</body>
+</html>

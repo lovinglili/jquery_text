@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="jq/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var yy=$("<a>");
+		yy.text("aabs");
+		$("p").append(yy);
+		yy.end();
+		yy.text("rrrrrrrrrr");//end之后，会选择先前选中的元素，所以此时改变文本只有第er个p中的a变化
+	})
+</script>
+<body>
+	<div>
+		<p>aaaaa</p>
+		<p>qqqq</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	onload=function(){
+
+		function debounce(callback,delay){
+			console.log("aas");
+			let t=null;
+			return function(){
+				clearTimeout(t);
+				t=setTimeout(()=>{
+						callback();
+					},delay);
+				};
+		}
+
+		window.onscroll=debounce(function(){
+			console.log("aaaa");
+		},1000);
+
+	}
+</script>
+<body>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+	<p>aaaaa</p>
+
+</body>
+</html>

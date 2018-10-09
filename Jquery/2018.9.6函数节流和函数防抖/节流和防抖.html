@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+刘强森 09:59:20
+// $(window).scroll(throttle(scrollfunc,100));
+
+
+
+            // function scrollfunc(e) {
+            //     console.log(e.type);
+            //     var inx = 0;
+            //     $('#floor li').each(function (index) {
+
+            //         if ($(window).scrollTop() >= ($(this).offset().top - $(this).height() / 2) && ($(window).scrollTop() <= $(this).offset().top + $(this).height() / 2)) {
+            //             $('.link-item').eq(index).addClass('active').siblings().removeClass('active');
+            //         }
+
+            //     })
+            // }
+
+            
+            /**
+             * throttle,函数节流
+             * 在给对象绑定事件的时候，将事件执行函数和间隔时间作为参数，传入调用
+             * method,实际绑定函数，duration，设置的事件触发间隔时间
+             * 返回值为一个函数， 作为事件绑定函数， 实际要执行的函数， 在返回函数中， 按条件执行
+             * 作用:保证连续触发的事件，按照设置的时间间隔执行
+             */ 
+
+
+
+            // function throttle(method, duration) {
+            //     var begin = new Date();
+            //     return function (e) {
+            //         var args = arguments;
+            //         var current = new Date();
+            //         var context = this;
+            //         if (current - begin >= duration) {
+            //             begin = current;
+            //             method.apply(context, args);
+            //         }
+            //     }
+            // }
+
+
+
+
+            //函数去抖，函数调用后延后一段时间执行，若在执行前再次调用，重新计算设置执行时间
+
+
+
+            $(window).scroll(debounce(scrollfunc,100));
+
+            function scrollfunc(e) {
+                console.log(e.type);
+                var inx = 0;
+                $('#floor li').each(function (index) {
+
+                    if ($(window).scrollTop() >= ($(this).offset().top - $(this).height() / 2) && ($(window).scrollTop() <= $(this).offset().top + $(this).height() / 2)) {
+                        $('.link-item').eq(index).addClass('active').siblings().removeClass('active');
+                    }
+
+                })
+            }
+            
+
+
+            
+            /**
+             * debounce,函数去抖
+             * 在给对象绑定事件的时候，将事件执行函数和延后执行时间作为参数，传入调用
+             * method,事件调用函数，delay，延后执行时间
+             * 返回值为一个函数， 作为事件绑定函数， 实际要执行的函数， 在返回函数中， 按条件执行
+             * 作用：函数调用n秒后才会执行，如果函数在n秒内被调用的话则函数不执行，重新计算执行时间
+             * 
+             */ 
+
+            function debounce(method,delay){
+                var timer = null;
+                return function(){
+                    var context = this;
+                    var args = arguments;
+                    clearTimeout(timer);
+                    timer = setTimeout(function(){
+                        method.apply(context,args);
+                    },delay)
+                }
+            }
+
+<body>
+	
+</body>
+</html>

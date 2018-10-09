@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width:200px;
+			height:100px;
+			display:none;
+			margin-bottom:20px;
+		}
+	</style>
+</head>
+<script type="text/javascript" src="../jq/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		$("p").slideUp(1000,function(){
+			$("div").slideDown(1000);
+		});
+		$(".but").on("click",function(){
+			alert("sdfsd");
+		})
+	})
+	
+</script>
+<body>
+	<div>
+		sdfjklsjdfgsdklgjsdf
+	</div>
+	<p>圣诞节开发哈数据库了地方哈说了健康的发挥妇女</p>
+	<button class="but">点击</button>
+</body>
+</html>

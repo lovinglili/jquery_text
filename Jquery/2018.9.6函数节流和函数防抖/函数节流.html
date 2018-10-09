@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	onload=function(){
+		function throttle(callback,delay){
+			var start=new Date().getTime();
+			return function(){
+				var now=new Date().getTime();
+				if(now-start>delay){
+					callback();
+					start=new Date().getTime();
+				}
+			}
+		}
+		window.onscroll=throttle(function(){
+			console.log("qqqqq");
+		},1000);
+	}
+</script>
+<body>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+	<p>dddddd</p>
+
+</body>
+</html>
